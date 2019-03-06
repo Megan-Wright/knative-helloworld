@@ -9,7 +9,7 @@ spec:
       revisionTemplate:
         spec:
           container:
-            image: docker.io/{username}/knative-helloworld
+            image: PIPELINE_REPLACE:latest 
             env:
             - name: TARGET
               value: "Go Sample v1"
