@@ -1,7 +1,7 @@
 apiVersion: serving.knative.dev/v1alpha1
 kind: Service
 metadata:
-  name: helloworld-go
+  name: knative-helloworld
   namespace: default
 spec:
   runLatest:
@@ -9,7 +9,7 @@ spec:
       revisionTemplate:
         spec:
           container:
-            image: docker.io/{username}/helloworld-go
+            image: PIPELINE_REPLACE:latest 
             env:
             - name: TARGET
               value: "Go Sample v1"
